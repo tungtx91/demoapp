@@ -1,0 +1,49 @@
+﻿<!DOCTYPE HTML>
+<html manifest = ""lang = "en-US" >
+<head>
+<meta charset="UTF-8">
+<title>OneMES</title>
+	
+<!-- Sencha Touch 2.2.1 CDN -->
+<link rel="stylesheet" type="text/css " href="sencha-touch.css" />
+    <script type="text/javascript" src="sencha-touch-all-debug.js"></script>
+<script type="text/javascript" src="Menu.js"></script>	
+<!--<link rel="stylesheet" type="text/css " href="Menu.css" />-->
+
+<!-- App Code -->
+<script type="text/javascript ">
+
+Ext.setup({
+    onReady: function() {
+        var viewport = Ext.Viewport;
+
+		// add extra css to viewport
+		Ext.Viewport.innerElement.addCls('viewport-inner');
+		
+		// add initial views
+        viewport.add([{
+            xtype: 'mainmenu'
+        },{
+            xtype: 'container',
+			html: 'Create by tungtx',
+			padding: 10,
+			items: [{
+				xtype: 'toolbar',
+				docked: 'top',
+				items: [{
+                    id: "mybtn",
+					iconCls: 'arrow_right',
+                    width: 40,
+					handler: function() {
+						Ext.Viewport.child('mainmenu').toggle();
+					}
+				}]
+			}]
+        }]);
+    }
+});
+</script>
+</head>
+<body>
+</body>
+</html>
